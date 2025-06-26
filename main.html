@@ -2,15 +2,20 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Модули курса SMM</title>
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    html, body { height: 100%; margin: 0; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      touch-action: manipulation;
+    }
     body {
       background: radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
-      overflow: hidden;
       display: flex;
       flex-direction: column;
       font-family: sans-serif;
@@ -25,6 +30,7 @@
       bottom: 0;
       left: 0;
       background: #015871;
+      z-index: 5;
     }
     .wave {
       background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
@@ -34,11 +40,13 @@
       height: 198px;
       animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
       transform: translate3d(0, 0, 0);
+      z-index: 5;
     }
     .wave:nth-of-type(2) {
       top: -175px;
       animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
       opacity: 1;
+      z-index: 5;
     }
     @keyframes wave {
       0% { margin-left: 0; }
@@ -82,7 +90,7 @@
       align-items: center;
       justify-content: flex-start;
       padding: 1rem;
-      padding-bottom: 7rem;
+      padding-bottom: 6rem;
       position: relative;
       z-index: 10;
       overflow-y: auto;
@@ -125,7 +133,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      z-index: 20;
+      z-index: 2000;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     }
     .menu-button {
